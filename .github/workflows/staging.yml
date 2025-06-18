@@ -1,0 +1,15 @@
+name: Staging CI
+
+on:
+  pull_request:
+    branches: [ "main" ]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  staging-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build & Pre-deploy Check
+      run: echo "Simulate staging test (e.g. integration tests)"

@@ -1,0 +1,15 @@
+name: Production Deploy
+
+on:
+  push:
+    tags:
+      - 'v*'   # Ví dụ v1.0.0, v2.3.1
+
+jobs:
+  deploy-prod:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Deploy to Production
+      run: echo "Deploying version ${{ github.ref_name }} to production"
